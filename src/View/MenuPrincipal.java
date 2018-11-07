@@ -27,17 +27,107 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jmb_Menu = new javax.swing.JMenuBar();
+        jm_Cadastro = new javax.swing.JMenu();
+        jmi_CadastroCliente = new javax.swing.JMenuItem();
+        jmi_CadastrarProduto = new javax.swing.JMenuItem();
+        jmi_CadastrarVendedor = new javax.swing.JMenuItem();
+        jm_Deletar = new javax.swing.JMenu();
+        jmi_DeletarCliente = new javax.swing.JMenuItem();
+        jmi_DeletarProduto = new javax.swing.JMenuItem();
+        jmi_DeletarVendedor = new javax.swing.JMenuItem();
+        jm_Alterar = new javax.swing.JMenu();
+        jmi_AlterarCliente = new javax.swing.JMenuItem();
+        jmi_AlterarProduto = new javax.swing.JMenuItem();
+        jmi_AlterarVendedor = new javax.swing.JMenuItem();
+        jm_BuscaSeparada = new javax.swing.JMenu();
+        jmi_BuscarCliente = new javax.swing.JMenuItem();
+        jmi_BuscarProduto = new javax.swing.JMenuItem();
+        jmi_BuscarVendedor = new javax.swing.JMenuItem();
+        jm_BuscaTodos = new javax.swing.JMenu();
+        jmi_BuscarTodosClientes = new javax.swing.JMenuItem();
+        jmi_BuscarTodosProdutos = new javax.swing.JMenuItem();
+        jmi_BuscarTodosVendedores = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Loja da Mariazinha");
+
+        jm_Cadastro.setText("Cadastro");
+
+        jmi_CadastroCliente.setText("Cliente");
+        jm_Cadastro.add(jmi_CadastroCliente);
+
+        jmi_CadastrarProduto.setText("Produto");
+        jm_Cadastro.add(jmi_CadastrarProduto);
+
+        jmi_CadastrarVendedor.setText("Vendedor");
+        jm_Cadastro.add(jmi_CadastrarVendedor);
+
+        jmb_Menu.add(jm_Cadastro);
+
+        jm_Deletar.setText("Excluir");
+
+        jmi_DeletarCliente.setText("Cliente");
+        jm_Deletar.add(jmi_DeletarCliente);
+
+        jmi_DeletarProduto.setText("Produto");
+        jm_Deletar.add(jmi_DeletarProduto);
+
+        jmi_DeletarVendedor.setText("Vendedor");
+        jm_Deletar.add(jmi_DeletarVendedor);
+
+        jmb_Menu.add(jm_Deletar);
+
+        jm_Alterar.setText("Alterar");
+
+        jmi_AlterarCliente.setText("Cliente");
+        jm_Alterar.add(jmi_AlterarCliente);
+
+        jmi_AlterarProduto.setText("Produto");
+        jm_Alterar.add(jmi_AlterarProduto);
+
+        jmi_AlterarVendedor.setText("Vendedor");
+        jm_Alterar.add(jmi_AlterarVendedor);
+
+        jmb_Menu.add(jm_Alterar);
+
+        jm_BuscaSeparada.setText("Buscas Separadas");
+
+        jmi_BuscarCliente.setText("Cliente");
+        jm_BuscaSeparada.add(jmi_BuscarCliente);
+
+        jmi_BuscarProduto.setText("Produto");
+        jm_BuscaSeparada.add(jmi_BuscarProduto);
+
+        jmi_BuscarVendedor.setText("Vendedor");
+        jm_BuscaSeparada.add(jmi_BuscarVendedor);
+
+        jmb_Menu.add(jm_BuscaSeparada);
+
+        jm_BuscaTodos.setText("Busca Geral");
+
+        jmi_BuscarTodosClientes.setText("Cliente");
+        jm_BuscaTodos.add(jmi_BuscarTodosClientes);
+
+        jmi_BuscarTodosProdutos.setText("Produto");
+        jm_BuscaTodos.add(jmi_BuscarTodosProdutos);
+
+        jmi_BuscarTodosVendedores.setText("Vendedor");
+        jm_BuscaTodos.add(jmi_BuscarTodosVendedores);
+
+        jmb_Menu.add(jm_BuscaTodos);
+
+        setJMenuBar(jmb_Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 636, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 423, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +169,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jm_Alterar;
+    private javax.swing.JMenu jm_BuscaSeparada;
+    private javax.swing.JMenu jm_BuscaTodos;
+    private javax.swing.JMenu jm_Cadastro;
+    private javax.swing.JMenu jm_Deletar;
+    private javax.swing.JMenuBar jmb_Menu;
+    private javax.swing.JMenuItem jmi_AlterarCliente;
+    private javax.swing.JMenuItem jmi_AlterarProduto;
+    private javax.swing.JMenuItem jmi_AlterarVendedor;
+    private javax.swing.JMenuItem jmi_BuscarCliente;
+    private javax.swing.JMenuItem jmi_BuscarProduto;
+    private javax.swing.JMenuItem jmi_BuscarTodosClientes;
+    private javax.swing.JMenuItem jmi_BuscarTodosProdutos;
+    private javax.swing.JMenuItem jmi_BuscarTodosVendedores;
+    private javax.swing.JMenuItem jmi_BuscarVendedor;
+    private javax.swing.JMenuItem jmi_CadastrarProduto;
+    private javax.swing.JMenuItem jmi_CadastrarVendedor;
+    private javax.swing.JMenuItem jmi_CadastroCliente;
+    private javax.swing.JMenuItem jmi_DeletarCliente;
+    private javax.swing.JMenuItem jmi_DeletarProduto;
+    private javax.swing.JMenuItem jmi_DeletarVendedor;
     // End of variables declaration//GEN-END:variables
 }
