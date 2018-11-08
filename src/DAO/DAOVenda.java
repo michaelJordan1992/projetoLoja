@@ -84,10 +84,11 @@ public class DAOVenda {
         con.close();
         return venda;
     }
-    public void atualizarVenda(Venda v) throws Exception{
+    public void atualizarVendaNumVenda(Venda v) throws Exception{
         sql = "UPDATE VENDA SET PRODUTO '"+v.getProduto()+"',"+v.getQuantidade()+""
                 + ",'"+v.getPagamento()+"',"+v.getValor()+","+v.getCliente()+""
-                + ","+v.getVendedor()+" ";
+                + ","+v.getVendedor()+""
+                + "WHERE "+v.getNumeroVenda()+" ";
         stm.executeUpdate(sql);
         stm.close();
         con.close();
