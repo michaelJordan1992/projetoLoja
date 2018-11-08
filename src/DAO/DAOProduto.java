@@ -93,5 +93,3 @@ public class DAOProduto {
         con.close();
     }
 }
-
-        
