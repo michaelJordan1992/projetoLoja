@@ -99,6 +99,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jm_Deletar.setText("Excluir");
 
         jmi_DeletarCliente.setText("Cliente");
+        jmi_DeletarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_DeletarClienteActionPerformed(evt);
+            }
+        });
         jm_Deletar.add(jmi_DeletarCliente);
 
         jmi_DeletarProduto.setText("Produto");
@@ -201,6 +206,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         j_AreaTrabalho.add(gcv);
     }//GEN-LAST:event_jmi_CadastrarVendedorActionPerformed
 
+    private void jmi_DeletarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_DeletarClienteActionPerformed
+        GuiDeletarCliente gdc = new GuiDeletarCliente();
+        gdc.setVisible(true);
+        j_AreaTrabalho.add(gdc);
+    }//GEN-LAST:event_jmi_DeletarClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,10 +240,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuPrincipal().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MenuPrincipal().setVisible(true);
         });
     }
 
