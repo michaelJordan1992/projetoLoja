@@ -115,6 +115,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jm_Deletar.add(jmi_DeletarProduto);
 
         jmi_DeletarVendedor.setText("Vendedor");
+        jmi_DeletarVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_DeletarVendedorActionPerformed(evt);
+            }
+        });
         jm_Deletar.add(jmi_DeletarVendedor);
 
         jmb_Menu.add(jm_Deletar);
@@ -222,6 +227,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         gdp.setVisible(true);
         j_AreaTrabalho.add(gdp);
     }//GEN-LAST:event_jmi_DeletarProdutoActionPerformed
+
+    private void jmi_DeletarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_DeletarVendedorActionPerformed
+        GuiDeletarVendedor gdv = new GuiDeletarVendedor();
+        gdv.setVisible(true);
+        j_AreaTrabalho.add(gdv);
+    }//GEN-LAST:event_jmi_DeletarVendedorActionPerformed
 
     /**
      * @param args the command line arguments
