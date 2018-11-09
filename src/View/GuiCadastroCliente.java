@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.ClienteController;
 import Model.Cliente;
 import javax.swing.JOptionPane;
 
@@ -187,6 +188,9 @@ public class GuiCadastroCliente extends javax.swing.JInternalFrame {
         c.setEndereco(jtf_Endereco.getText());
         c.setCidade(jtf_Cidade.getText());
         c.setEstado((String) jcb_Estado.getModel().getSelectedItem());
+        
+        ClienteController cc = new ClienteController();
+        cc.cadastrarCliente(c);
    }catch(Exception ex){
        JOptionPane.showMessageDialog(
        null,
