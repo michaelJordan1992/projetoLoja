@@ -72,6 +72,7 @@ public class GuiCadastroProduto extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle("Cadastro de Produto");
 
         jl_Produto.setText("Produto:");
 
