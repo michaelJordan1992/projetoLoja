@@ -33,8 +33,8 @@ public class GuiCadastroVendedor extends javax.swing.JInternalFrame {
 
         jl_NomeVendedor = new javax.swing.JLabel();
         jtf_NomeVendedor = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jb_Limpar = new javax.swing.JButton();
+        jb_Cadastrar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -47,11 +47,21 @@ public class GuiCadastroVendedor extends javax.swing.JInternalFrame {
 
         jtf_NomeVendedor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("Limpar");
+        jb_Limpar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jb_Limpar.setText("Limpar");
+        jb_Limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_LimparActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setText("Cadastrar");
+        jb_Cadastrar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jb_Cadastrar.setText("Cadastrar");
+        jb_Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_CadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,9 +69,9 @@ public class GuiCadastroVendedor extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -79,13 +89,21 @@ public class GuiCadastroVendedor extends javax.swing.JInternalFrame {
                     .addComponent(jtf_NomeVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jb_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_LimparActionPerformed
+            limpar();
+    }//GEN-LAST:event_jb_LimparActionPerformed
+
+    private void jb_CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CadastrarActionPerformed
+        cadastrarVendedor();
+    }//GEN-LAST:event_jb_CadastrarActionPerformed
 private void cadastrarVendedor(){
     try{
         Vendedor v = new Vendedor();
@@ -103,8 +121,8 @@ private void limpar(){
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jb_Cadastrar;
+    private javax.swing.JButton jb_Limpar;
     private javax.swing.JLabel jl_NomeVendedor;
     private javax.swing.JTextField jtf_NomeVendedor;
     // End of variables declaration//GEN-END:variables
