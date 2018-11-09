@@ -79,6 +79,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jm_Cadastro.add(jmi_CadastroCliente);
 
         jmi_CadastrarProduto.setText("Produto");
+        jmi_CadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_CadastrarProdutoActionPerformed(evt);
+            }
+        });
         jm_Cadastro.add(jmi_CadastrarProduto);
 
         jmi_CadastrarVendedor.setText("Vendedor");
@@ -178,6 +183,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         gcc.setVisible(true);
         j_AreaTrabalho.add(gcc);
     }//GEN-LAST:event_jmi_CadastroClienteActionPerformed
+
+    private void jmi_CadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_CadastrarProdutoActionPerformed
+       GuiCadastroProduto gcp = new GuiCadastroProduto();
+       gcp.setVisible(true);
+       j_AreaTrabalho.add(gcp);
+    }//GEN-LAST:event_jmi_CadastrarProdutoActionPerformed
 
     /**
      * @param args the command line arguments
