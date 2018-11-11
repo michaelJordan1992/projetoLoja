@@ -3,6 +3,7 @@ package DAO;
 import Model.Cliente;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -28,27 +29,28 @@ public class DAOCliente {
         con.close();
     
     }
-    public void deletarClienteId(Cliente c) throws Exception{
-        sql = "DELETE * FROM CLIENTE WHERE '"+c.getIdCliente()+"'";
+    public void deletarClienteId(Cliente c) throws SQLException{
+        sql = "DELETE FROM CLIENTE WHERE ID = "+c.getIdCliente()+" ";
         stm.executeUpdate(sql);
         stm.close();
         con.close();
+      
     }
     public void deletarClienteCpf(Cliente c) throws Exception{
-        sql = "DELETE * FROM CLIENTE WHERE "+c.getCpf()+" ";
+        sql = "DELETE  FROM CLIENTE WHERE CPF = '"+c.getCpf()+"' ";
         stm.executeUpdate(sql);
         stm.close();
         con.close();
-        
-    }
+    }    
+  
     public void deletarClienteRg(Cliente c) throws Exception{
-        sql = "DELETE *FROM CLIENTE WHERE "+c.getRg()+" ";
+        sql = "DELETE FROM CLIENTE WHERE RG = '"+c.getRg()+"' ";
         stm.executeUpdate(sql);
         stm.close();
         con.close();
     }
     public ArrayList<Cliente> buscarTodosClientes() throws Exception{
-        sql = "SELECT *FROM CLIENTE";
+        sql = "SELECT * FROM CLIENTE";
         ResultSet rs = stm.executeQuery(sql);
         
         ArrayList<Cliente> cliente = new ArrayList<>();
@@ -56,7 +58,7 @@ public class DAOCliente {
         while(rs.next()){
             Cliente c = new Cliente();
             
-            c.setIdCliente(rs.getInt("IDCLIENTE"));
+            c.setIdCliente(rs.getInt("ID"));
             c.setNome(rs.getString("NOME"));
             c.setCpf(rs.getString("CPF"));
             c.setRg(rs.getString("RG"));
@@ -81,7 +83,7 @@ public class DAOCliente {
         while(rs.next()){
             Cliente c1 = new Cliente();
            
-            c1.setIdCliente(rs.getInt("IDCLIENTE"));
+            c1.setIdCliente(rs.getInt("ID"));
             c1.setNome(rs.getString("NOME"));
             c1.setCpf(rs.getString("CPF"));
             c1.setRg(rs.getString("RG"));
