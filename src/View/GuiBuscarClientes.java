@@ -27,8 +27,8 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jl_BuscaGeral = new javax.swing.JLabel();
+        jp_Tabela = new javax.swing.JScrollPane();
         tabela_Cliente = new javax.swing.JTable();
 
         setClosable(true);
@@ -37,8 +37,8 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Busca de Clientes");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel1.setText("Busca Geral de Clientes");
+        jl_BuscaGeral.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jl_BuscaGeral.setText("Busca Geral de Clientes");
 
         tabela_Cliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -52,14 +52,14 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, true, false, true
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tabela_Cliente);
+        jp_Tabela.setViewportView(tabela_Cliente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,9 +68,9 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
+                    .addComponent(jp_Tabela, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jl_BuscaGeral)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -78,9 +78,9 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jl_BuscaGeral)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jp_Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
@@ -89,8 +89,8 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jl_BuscaGeral;
+    private javax.swing.JScrollPane jp_Tabela;
     private javax.swing.JTable tabela_Cliente;
     // End of variables declaration//GEN-END:variables
 }
