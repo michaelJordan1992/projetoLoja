@@ -153,6 +153,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jm_BuscaTodos.setText("Busca Geral");
 
         jmi_BuscarTodosClientes.setText("Cliente");
+        jmi_BuscarTodosClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_BuscarTodosClientesActionPerformed(evt);
+            }
+        });
         jm_BuscaTodos.add(jmi_BuscarTodosClientes);
 
         jmi_BuscarTodosProdutos.setText("Produto");
@@ -233,6 +238,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         gdv.setVisible(true);
         j_AreaTrabalho.add(gdv);
     }//GEN-LAST:event_jmi_DeletarVendedorActionPerformed
+
+    private void jmi_BuscarTodosClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_BuscarTodosClientesActionPerformed
+        GuiBuscarClientes gbc = new GuiBuscarClientes();
+        gbc.setVisible(true);
+        j_AreaTrabalho.add(gbc);
+    }//GEN-LAST:event_jmi_BuscarTodosClientesActionPerformed
 
     /**
      * @param args the command line arguments
