@@ -185,6 +185,7 @@ public class GuiCadastroCliente extends javax.swing.JInternalFrame {
         c.setNome(jtf_Nome.getText());
         c.setCpf(jtf_Cpf.getText());
         c.setRg(jtf_Rg.getText());
+        c.setCelular(jtf_Celular.getText());
         c.setEndereco(jtf_Endereco.getText());
         c.setCidade(jtf_Cidade.getText());
         c.setEstado((String) jcb_Estado.getModel().getSelectedItem());
@@ -195,6 +196,7 @@ public class GuiCadastroCliente extends javax.swing.JInternalFrame {
        JOptionPane.showMessageDialog(
        null,
                "O seguinte erro ocorreu!!! "+ex.getMessage());
+       limpar();
     }
 }
 
