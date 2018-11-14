@@ -5,6 +5,14 @@
  */
 package View;
 
+import Controller.ClienteController;
+import Model.Cliente;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author michael
@@ -30,6 +38,8 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
         jl_BuscaGeral = new javax.swing.JLabel();
         jp_Tabela = new javax.swing.JScrollPane();
         tabela_Cliente = new javax.swing.JTable();
+        jb_Limpar = new javax.swing.JButton();
+        jb_Buscar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -61,6 +71,20 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
         });
         jp_Tabela.setViewportView(tabela_Cliente);
 
+        jb_Limpar.setText("Limpar");
+        jb_Limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_LimparActionPerformed(evt);
+            }
+        });
+
+        jb_Buscar.setText("Buscar");
+        jb_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_BuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,6 +97,12 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
                         .addComponent(jl_BuscaGeral)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(254, 254, 254)
+                .addComponent(jb_Limpar)
+                .addGap(128, 128, 128)
+                .addComponent(jb_Buscar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,15 +110,66 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jl_BuscaGeral)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jp_Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addComponent(jp_Tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addComponent(jb_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_Limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(11, 11, 11))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jb_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_LimparActionPerformed
+        limpar();
+    }//GEN-LAST:event_jb_LimparActionPerformed
+
+    private void jb_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_BuscarActionPerformed
+        try {
+            buscaClientes();
+        } catch (Exception ex) {
+            Logger.getLogger(GuiBuscarClientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jb_BuscarActionPerformed
+    private void limpar(){
+        DefaultTableModel dtm = (DefaultTableModel) tabela_Cliente.getModel();
+        dtm.setNumRows(0);
+    }
+    private void buscaClientes() throws Exception{
+    try{
+        DefaultTableModel dtm = (DefaultTableModel) tabela_Cliente.getModel();
+        String[] colun = new String [3];
+        
+        ClienteController cc = new ClienteController();
+        ArrayList<Cliente> cb = new ArrayList<Cliente>();
+        cb = cc.buscarTodosClientes();
+        dtm.setNumRows(0);
+        
+        for(int i = 0; i <cb.size() ;i++){
+            colun[0] = Integer.toString(cb.get(i).getIdCliente());
+            colun[1] = cb.get(i).getNome();
+            colun[2] = cb.get(i).getCpf();
+            colun[3] = cb.get(i).getRg();
+            colun[4] = cb.get(i).getCelular();
+            colun[5] = cb.get(i).getEndereco();
+            colun[6] = cb.get(i).getCidade();
+            colun[4] = cb.get(i).getEstado();
+            
+            dtm.addRow(colun);
+        }
+    }catch(Exception ex){
+        JOptionPane.showMessageDialog(
+        null,
+                "Erro: "+ex.getMessage());
+    }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jb_Buscar;
+    private javax.swing.JButton jb_Limpar;
     private javax.swing.JLabel jl_BuscaGeral;
     private javax.swing.JScrollPane jp_Tabela;
     private javax.swing.JTable tabela_Cliente;
