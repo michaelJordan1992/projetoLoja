@@ -170,6 +170,7 @@ public class GuiCadastroCliente extends javax.swing.JInternalFrame {
     private void jb_CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CadastrarActionPerformed
         cadastrar();
     }//GEN-LAST:event_jb_CadastrarActionPerformed
+   
     private void limpar(){
         jtf_Nome.setText("");
         jtf_Cpf.setText("");
@@ -182,6 +183,7 @@ public class GuiCadastroCliente extends javax.swing.JInternalFrame {
     private void cadastrar(){
    try{
         Cliente c = new Cliente();
+        
         c.setNome(jtf_Nome.getText());
         c.setCpf(jtf_Cpf.getText());
         c.setRg(jtf_Rg.getText());
