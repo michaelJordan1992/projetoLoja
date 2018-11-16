@@ -39,19 +39,40 @@ public class GuiDeletarCliente extends javax.swing.JInternalFrame {
         ClienteController cc = new ClienteController();
         
         if(jrb_DeletaClienteId.isSelected()){
+                        if(jtf_DeletaCliente.getText().isEmpty()){
+                JOptionPane.showMessageDialog(
+                null,
+                        "Campo não pode ser vazio!!!");
+                        }else{
+                
+                        }
+           
             c.setIdCliente(Integer.parseInt(jtf_DeletaCliente.getText()));
             cc.deletarClienteId(c);
-                       
         }
         if(jrb_DeletaClienteCpf.isSelected()){
+                        if(jtf_DeletaCliente.getText().isEmpty()){
+                JOptionPane.showMessageDialog(
+                null,
+                        "Campo não pode ser vazio!!!");
+                        }else{
+                            
+                        }
             c.setCpf(jtf_DeletaCliente.getText());
             cc.deletarClienteCpf(c);
         }
         if(jrb_DeletaClienteRg.isSelected()){
+                        if(jtf_DeletaCliente.getText().isEmpty()){
+                JOptionPane.showMessageDialog(
+                null,
+                        "Campo não pode ser vazio!!!");
+                        }else{
+                            
+                        }
             c.setRg(jtf_DeletaCliente.getText());
             cc.deletarClienteRg(c);
         }else{
-           
+            
         }
         limpar();
         
