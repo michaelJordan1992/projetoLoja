@@ -22,7 +22,7 @@ public class DAOProduto {
     }
     
     public void cadastrarProduto(Produto p) throws Exception{
-        sql = "INSERT INTO PRODUTO (IDPRODUTO, NOMEPRODUTO, MARCA, COR, MODELO,VALOR)"
+        sql = "INSERT INTO PRODUTO (ID, NOME, MARCA, COR, MODELO,VALOR)"
                 + "VALUES("+null+",'"+p.getNomeProduto()+"','"+p.getMarca()+"','"+p.getCor()+"'"
                 + ",'"+p.getModelo()+"',"+p.getValor()+")";
         stm.executeUpdate(sql);
@@ -46,8 +46,8 @@ public class DAOProduto {
         
         Produto pd = new Produto();
         
-        pd.setIdProduto(rs.getInt("IDPRODUTO"));
-        pd.setNomeProduto(rs.getString("NOMEPRODUTO"));
+        pd.setIdProduto(rs.getInt("ID"));
+        pd.setNomeProduto(rs.getString("NOME"));
         pd.setMarca(rs.getString("MARCA"));
         pd.setCor(rs.getString("COR"));
         pd.setModelo(rs.getString("MODELO"));
