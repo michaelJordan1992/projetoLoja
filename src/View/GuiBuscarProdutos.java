@@ -4,6 +4,7 @@ package View;
 import Controller.ProdutoController;
 import Model.Produto;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,7 +18,7 @@ public class GuiBuscarProdutos extends javax.swing.JInternalFrame {
     public GuiBuscarProdutos() {
         super("Pesquisar Produto");
         initComponents();
-        
+        this.buscarTodosProdutos();
     }
       private void buscarTodosProdutos(){
         try{
@@ -39,7 +40,9 @@ public class GuiBuscarProdutos extends javax.swing.JInternalFrame {
                 });
             }
         }catch (Exception ex){
-            
+            JOptionPane.showMessageDialog(
+            null,
+                    "O Seguinte Erro Ocorreu: "+ex.getMessage());
         }
     }
             
@@ -51,6 +54,11 @@ public class GuiBuscarProdutos extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela_Produto = new javax.swing.JTable();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setText("Produtos");
 
