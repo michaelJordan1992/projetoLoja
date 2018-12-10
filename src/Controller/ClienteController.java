@@ -2,6 +2,7 @@ package Controller;
 
 import DAO.DAOCliente;
 import Model.Cliente;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -49,7 +50,7 @@ public class ClienteController {
         return dc.buscarClienteCpf(c);
     }
     public void atualizarClienteCpf(Cliente c) throws Exception{
-        dc = new DAOCliente();
+        DAOCliente dc = new DAOCliente();
         dc.atualizarClienteCpf(c);
         JOptionPane.showMessageDialog(
         null, 
