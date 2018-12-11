@@ -60,7 +60,7 @@ public class DAOProduto {
         return produto;
     }
     public ArrayList<Produto> buscarProdutosId(Produto p) throws Exception{
-        sql = "SELECT * FROM PRODUTO WHERE ID"+p.getIdProduto()+"";
+        sql = "SELECT * FROM PRODUTO WHERE ID = "+p.getIdProduto()+"";
         ResultSet rs = stm.executeQuery(sql);
         
         ArrayList<Produto> produto = new ArrayList<>();
@@ -69,8 +69,8 @@ public class DAOProduto {
         
         Produto pd = new Produto();
         
-        pd.setIdProduto(rs.getInt("IDPRODUTO"));
-        pd.setNomeProduto(rs.getString("NOMEPRODUTO"));
+        pd.setIdProduto(rs.getInt("ID"));
+        pd.setNomeProduto(rs.getString("NOME"));
         pd.setMarca(rs.getString("MARCA"));
         pd.setCor(rs.getString("COR"));
         pd.setModelo(rs.getString("MODELO"));
