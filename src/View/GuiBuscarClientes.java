@@ -55,7 +55,7 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela_Cliente = new javax.swing.JTable();
-        jb_Buscar = new javax.swing.JButton();
+        jl_Clientes = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -90,13 +90,7 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tabela_Cliente);
 
-        jb_Buscar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jb_Buscar.setText("Buscar");
-        jb_Buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_BuscarActionPerformed(evt);
-            }
-        });
+        jl_Clientes.setText("Clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,32 +100,28 @@ public class GuiBuscarClientes extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jb_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(290, 290, 290))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jl_Clientes)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                .addGap(40, 40, 40)
-                .addComponent(jb_Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addGap(14, 14, 14)
+                .addComponent(jl_Clientes)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jb_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_BuscarActionPerformed
-        buscarTodosCLientes();
-    }//GEN-LAST:event_jb_BuscarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jb_Buscar;
+    private javax.swing.JLabel jl_Clientes;
     private javax.swing.JTable tabela_Cliente;
     // End of variables declaration//GEN-END:variables
 }
