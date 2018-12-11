@@ -1,6 +1,9 @@
 
 package View;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author michael
@@ -33,10 +36,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmi_DeletarCliente = new javax.swing.JMenuItem();
         jmi_DeletarProduto = new javax.swing.JMenuItem();
         jmi_DeletarVendedor = new javax.swing.JMenuItem();
-        jm_Alterar = new javax.swing.JMenu();
-        jmi_AlterarCliente = new javax.swing.JMenuItem();
-        jmi_AlterarProduto = new javax.swing.JMenuItem();
-        jmi_AlterarVendedor = new javax.swing.JMenuItem();
         jm_BuscaSeparada = new javax.swing.JMenu();
         jmi_BuscarCliente = new javax.swing.JMenuItem();
         jmi_BuscarProduto = new javax.swing.JMenuItem();
@@ -51,6 +50,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmi_BuscarVendaIndividual = new javax.swing.JMenuItem();
         jmi_DeletarVenda = new javax.swing.JMenuItem();
         jmi_AtualizarVenda = new javax.swing.JMenuItem();
+        jm_Alteracoes = new javax.swing.JMenu();
+        jmi_Cliente = new javax.swing.JMenuItem();
+        jmi_Produto = new javax.swing.JMenuItem();
+        jmi_Vendedor = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Loja da Mariazinha");
@@ -124,25 +127,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jmb_Menu.add(jm_Deletar);
 
-        jm_Alterar.setText("Alterar");
-
-        jmi_AlterarCliente.setText("Cliente");
-        jm_Alterar.add(jmi_AlterarCliente);
-
-        jmi_AlterarProduto.setText("Produto");
-        jm_Alterar.add(jmi_AlterarProduto);
-
-        jmi_AlterarVendedor.setText("Vendedor");
-        jm_Alterar.add(jmi_AlterarVendedor);
-
-        jmb_Menu.add(jm_Alterar);
-
-        jm_BuscaSeparada.setText("Buscas Separadas");
+        jm_BuscaSeparada.setText("Buscas Individual");
 
         jmi_BuscarCliente.setText("Cliente");
+        jmi_BuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_BuscarClienteActionPerformed(evt);
+            }
+        });
         jm_BuscaSeparada.add(jmi_BuscarCliente);
 
         jmi_BuscarProduto.setText("Produto");
+        jmi_BuscarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_BuscarProdutoActionPerformed(evt);
+            }
+        });
         jm_BuscaSeparada.add(jmi_BuscarProduto);
 
         jmi_BuscarVendedor.setText("Vendedor");
@@ -161,9 +161,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jm_BuscaTodos.add(jmi_BuscarTodosClientes);
 
         jmi_BuscarTodosProdutos.setText("Produto");
+        jmi_BuscarTodosProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_BuscarTodosProdutosActionPerformed(evt);
+            }
+        });
         jm_BuscaTodos.add(jmi_BuscarTodosProdutos);
 
         jmi_BuscarTodosVendedores.setText("Vendedor");
+        jmi_BuscarTodosVendedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_BuscarTodosVendedoresActionPerformed(evt);
+            }
+        });
         jm_BuscaTodos.add(jmi_BuscarTodosVendedores);
 
         jmb_Menu.add(jm_BuscaTodos);
@@ -186,6 +196,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jm_Venda.add(jmi_AtualizarVenda);
 
         jmb_Menu.add(jm_Venda);
+
+        jm_Alteracoes.setText("Alterações");
+
+        jmi_Cliente.setText("Cliente");
+        jmi_Cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_ClienteActionPerformed(evt);
+            }
+        });
+        jm_Alteracoes.add(jmi_Cliente);
+
+        jmi_Produto.setText("Produto");
+        jm_Alteracoes.add(jmi_Produto);
+
+        jmi_Vendedor.setText("Vendedor");
+        jm_Alteracoes.add(jmi_Vendedor);
+
+        jmb_Menu.add(jm_Alteracoes);
 
         setJMenuBar(jmb_Menu);
 
@@ -245,6 +273,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
         j_AreaTrabalho.add(gbc);
     }//GEN-LAST:event_jmi_BuscarTodosClientesActionPerformed
 
+    private void jmi_BuscarTodosProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_BuscarTodosProdutosActionPerformed
+       GuiBuscarProdutos gbp = new GuiBuscarProdutos();
+       gbp.setVisible(true);
+       j_AreaTrabalho.add(gbp);
+    }//GEN-LAST:event_jmi_BuscarTodosProdutosActionPerformed
+
+    private void jmi_BuscarTodosVendedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_BuscarTodosVendedoresActionPerformed
+        GuiBuscarVendedores gbv = new GuiBuscarVendedores();
+        gbv.setVisible(true);
+        j_AreaTrabalho.add(gbv);
+    }//GEN-LAST:event_jmi_BuscarTodosVendedoresActionPerformed
+
+    private void jmi_BuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_BuscarClienteActionPerformed
+        GuiBuscaCliente guicli = null;
+        try {
+            guicli = new GuiBuscaCliente();
+        } catch (Exception ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        guicli.setVisible(true);
+        j_AreaTrabalho.add(guicli);
+      
+    }//GEN-LAST:event_jmi_BuscarClienteActionPerformed
+
+    private void jmi_BuscarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_BuscarProdutoActionPerformed
+        GuiBuscaProduto guip = new GuiBuscaProduto();
+        guip.setVisible(true);
+        j_AreaTrabalho.add(guip);
+    }//GEN-LAST:event_jmi_BuscarProdutoActionPerformed
+
+    private void jmi_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_ClienteActionPerformed
+        GuiAtualizarCliente gac = null;
+        try {
+            gac = new GuiAtualizarCliente();
+        } catch (Exception ex) {
+            Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        gac.setVisible(true);
+        j_AreaTrabalho.add(gac);
+    }//GEN-LAST:event_jmi_ClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,7 +349,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane j_AreaTrabalho;
-    private javax.swing.JMenu jm_Alterar;
+    private javax.swing.JMenu jm_Alteracoes;
     private javax.swing.JMenu jm_BuscaSeparada;
     private javax.swing.JMenu jm_BuscaTodos;
     private javax.swing.JMenu jm_Cadastro;
@@ -288,9 +357,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jm_Venda;
     private javax.swing.JMenuBar jmb_Menu;
     private javax.swing.JMenuItem jmi_AbrirVenda;
-    private javax.swing.JMenuItem jmi_AlterarCliente;
-    private javax.swing.JMenuItem jmi_AlterarProduto;
-    private javax.swing.JMenuItem jmi_AlterarVendedor;
     private javax.swing.JMenuItem jmi_AtualizarVenda;
     private javax.swing.JMenuItem jmi_BuscaVendaGeral;
     private javax.swing.JMenuItem jmi_BuscarCliente;
@@ -303,9 +369,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_CadastrarProduto;
     private javax.swing.JMenuItem jmi_CadastrarVendedor;
     private javax.swing.JMenuItem jmi_CadastroCliente;
+    private javax.swing.JMenuItem jmi_Cliente;
     private javax.swing.JMenuItem jmi_DeletarCliente;
     private javax.swing.JMenuItem jmi_DeletarProduto;
     private javax.swing.JMenuItem jmi_DeletarVenda;
     private javax.swing.JMenuItem jmi_DeletarVendedor;
+    private javax.swing.JMenuItem jmi_Produto;
+    private javax.swing.JMenuItem jmi_Vendedor;
     // End of variables declaration//GEN-END:variables
 }
