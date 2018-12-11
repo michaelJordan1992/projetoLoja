@@ -21,8 +21,8 @@ public class DAOVendedor {
         this.stm = con.createStatement();
     }
     public void cadastrarVendedor(Vendedor v) throws Exception{
-        sql = "INSERT INTO VENDEDOR(IDVENDEDOR NOMEVENDEDOR"
-                + "VALUES('"+v.getIdVendedor()+"',"+v.getNomeVendedor()+" )";
+        sql = "INSERT INTO VENDEDOR(ID, NOME)"
+                + "VALUES("+null+",'"+v.getNomeVendedor()+"' )";
         stm.executeUpdate(sql);
         stm.close();
         con.close();
@@ -46,8 +46,8 @@ public class DAOVendedor {
         
         Vendedor vd = new Vendedor();
         
-        vd.setIdVendedor(rs.getInt("IDVENDEDOR"));
-        vd.setNomeVendedor(rs.getString("NOMEVENDEDOR"));
+        vd.setIdVendedor(rs.getInt("ID"));
+        vd.setNomeVendedor(rs.getString("NOME"));
         
         vendedor.add(vd);
         }
@@ -65,8 +65,8 @@ public class DAOVendedor {
         while(rs.next()){
             Vendedor vd = new Vendedor();
             
-            vd.setIdVendedor(rs.getInt("IDVENDEDOR"));
-            vd.setNomeVendedor(rs.getString("NOMEVENDEDOR"));
+            vd.setIdVendedor(rs.getInt("ID"));
+            vd.setNomeVendedor(rs.getString("NOME"));
             
             vendedor.add(vd);
         }
@@ -75,7 +75,7 @@ public class DAOVendedor {
         return vendedor;
     }
     public void atualizarVendedorId(Vendedor v) throws Exception{
-        sql = "UPDATE VENDEDOR SET IDVENDEDOR'"+v.getIdVendedor()+"', NOMEVENDEDOR"+v.getNomeVendedor()+" "
+        sql = "UPDATE VENDEDOR SET ID'"+v.getIdVendedor()+"', NOME"+v.getNomeVendedor()+" "
                 + "WHERE "+v.getIdVendedor()+" ";
         stm.executeUpdate(sql);
         stm.close();
